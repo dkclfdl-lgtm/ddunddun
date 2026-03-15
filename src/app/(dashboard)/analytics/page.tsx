@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback } from 'react';
 import { ColumnDef } from '@tanstack/react-table';
-import { Download, Upload, ArrowUpDown, Trash2, FileSpreadsheet, Clock } from 'lucide-react';
+import { Download, Upload, ArrowUpDown, Trash2, FileSpreadsheet, Clock, BarChart3 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -25,6 +25,7 @@ import {
 import { exportToCSV } from '@/features/analytics/utils';
 import type { ExcelProductData, AnalyticsFilters } from '@/features/analytics/types';
 import { ExcelUpload } from '@/features/analytics/components/excel-upload';
+import { ReportDownloadModal } from '@/features/analytics/components/report-download-modal';
 import { DataOverview } from '@/features/analytics/components/data-overview';
 import { CategorySummaryChart } from '@/features/analytics/components/category-summary-chart';
 import { CategoryDetailTable } from '@/features/analytics/components/category-detail-table';
@@ -52,6 +53,7 @@ export default function AnalyticsPage() {
   const [filters, setFilters] = useState<AnalyticsFilters>(DEFAULT_FILTERS);
   const [showColumnManager, setShowColumnManager] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
+  const [showReportModal, setShowReportModal] = useState(false);
 
   const { data, totalCount, hasData } = useExcelData(filters);
   const fileName = useAnalyticsStore((s) => s.fileName);
@@ -178,6 +180,15 @@ export default function AnalyticsPage() {
 
   return (
     <div className="space-y-6 p-6">
+      <ReportDownloadModal
+        open={showReportModal}
+        onOpenChange={setShowReportModal}
+        data={data}
+        categories={categories}
+        recommendations={recommendations}
+        fileName={fileName ?? ''}
+        uploadedAt={uploadedAt}
+      />
       <PageHeader
         title="엑셀 통계 분석"
         description="POS 판매 데이터를 분석하여 인사이트를 도출합니다"
@@ -206,6 +217,14 @@ export default function AnalyticsPage() {
           <Button variant="outline" size="sm" onClick={handleExport}>
             <Download className="h-4 w-4 mr-1" />
             CSV 내보내기
+          </Button>
+          <Button
+            size="sm"
+            onClick={() => setShowReportModal(true)}
+            className="gap-1.5"
+          >
+            <BarChart3 className="h-4 w-4" />
+            리포트 다운로드
           </Button>
         </div>
       </PageHeader>
