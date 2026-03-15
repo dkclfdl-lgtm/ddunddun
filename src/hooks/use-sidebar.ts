@@ -1,0 +1,21 @@
+'use client';
+
+import { create } from 'zustand';
+
+interface SidebarState {
+  isOpen: boolean;
+  isCollapsed: boolean;
+  toggle: () => void;
+  open: () => void;
+  close: () => void;
+  toggleCollapse: () => void;
+}
+
+export const useSidebar = create<SidebarState>((set) => ({
+  isOpen: true,
+  isCollapsed: false,
+  toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+  open: () => set({ isOpen: true }),
+  close: () => set({ isOpen: false }),
+  toggleCollapse: () => set((state) => ({ isCollapsed: !state.isCollapsed })),
+}));

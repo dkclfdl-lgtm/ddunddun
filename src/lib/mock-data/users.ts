@@ -1,0 +1,61 @@
+import type { Profile } from '@/types';
+
+const BRAND_ID = 'brand-001';
+
+export const mockUsers: Profile[] = [
+  {
+    id: 'profile-001',
+    user_id: 'user-001',
+    brand_id: BRAND_ID,
+    name: '김태호',
+    email: 'taeho.kim@ddunddun.kr',
+    phone: '010-9876-5432',
+    role: 'admin',
+    avatar_url: null,
+    created_at: '2023-01-10T09:00:00Z',
+  },
+  {
+    id: 'profile-002',
+    user_id: 'user-002',
+    brand_id: BRAND_ID,
+    name: '이수진',
+    email: 'sujin.lee@ddunddun.kr',
+    phone: '010-1234-5678',
+    role: 'supervisor',
+    avatar_url: null,
+    created_at: '2023-02-15T09:00:00Z',
+  },
+  {
+    id: 'profile-003',
+    user_id: 'user-003',
+    brand_id: BRAND_ID,
+    name: '박준혁',
+    email: 'junhyuk.park@ddunddun.kr',
+    phone: '010-5555-1234',
+    role: 'owner',
+    avatar_url: null,
+    created_at: '2023-03-01T09:00:00Z',
+  },
+  {
+    id: 'profile-004',
+    user_id: 'user-004',
+    brand_id: BRAND_ID,
+    name: '최민지',
+    email: 'minji.choi@ddunddun.kr',
+    phone: '010-7777-8888',
+    role: 'owner',
+    avatar_url: null,
+    created_at: '2023-05-10T09:00:00Z',
+  },
+  {
+    id: 'profile-005',
+    user_id: 'user-005',
+    brand_id: BRAND_ID,
+    name: '정하윤',
+    email: 'hayoon.jung@ddunddun.kr',
+    phone: '010-3333-4444',
+    role: 'manager',
+    avatar_url: null,
+    created_at: '2023-06-20T09:00:00Z',
+  },
+];

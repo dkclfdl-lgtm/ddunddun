@@ -1,0 +1,116 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-pretendard: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+
+    /* Naver Green Theme */
+    --background: 220 14% 96%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    --primary: 148 97% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 0 0% 12%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 148 60% 95%;
+    --accent-foreground: 148 97% 30%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 216 12% 90%;
+    --input: 216 12% 90%;
+    --ring: 148 97% 39%;
+    --radius: 0.5rem;
+
+    /* Chart Colors */
+    --chart-1: 148 97% 39%;
+    --chart-2: 212 92% 45%;
+    --chart-3: 30 95% 55%;
+    --chart-4: 280 65% 55%;
+    --chart-5: 340 75% 55%;
+
+    /* Naver Custom Colors */
+    --naver-green: 148 97% 39%;
+    --naver-green-light: 148 60% 95%;
+    --naver-green-hover: 148 97% 33%;
+    --naver-bg: 220 14% 96%;
+    --naver-surface: 0 0% 100%;
+    --naver-text: 0 0% 12%;
+    --naver-text-secondary: 0 0% 40%;
+    --naver-text-tertiary: 0 0% 60%;
+    --naver-border: 216 12% 90%;
+    --warning: 40 100% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 212 92% 45%;
+    --info-foreground: 0 0% 100%;
+    --success: 148 97% 39%;
+    --success-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 148 97% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 148 50% 15%;
+    --accent-foreground: 148 97% 60%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 148 97% 39%;
+
+    --chart-1: 148 80% 50%;
+    --chart-2: 212 80% 55%;
+    --chart-3: 30 85% 60%;
+    --chart-4: 280 55% 65%;
+    --chart-5: 340 65% 60%;
+
+    --naver-green: 148 97% 39%;
+    --naver-green-light: 148 50% 15%;
+    --naver-green-hover: 148 97% 45%;
+    --naver-bg: 0 0% 7%;
+    --naver-surface: 0 0% 10%;
+    --naver-text: 0 0% 95%;
+    --naver-text-secondary: 0 0% 64%;
+    --naver-text-tertiary: 0 0% 45%;
+    --naver-border: 0 0% 18%;
+    --warning: 40 100% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 212 80% 55%;
+    --info-foreground: 0 0% 100%;
+    --success: 148 80% 50%;
+    --success-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-pretendard;
+  }
+}
+
+@layer utilities {
+  .font-pretendard {
+    font-family: var(--font-pretendard);
+  }
+}
