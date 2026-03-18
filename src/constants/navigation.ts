@@ -11,6 +11,9 @@ import {
   Megaphone,
   Settings,
   FileSpreadsheet,
+  PieChart,
+  Calculator,
+  ListChecks,
   type LucideIcon,
 } from 'lucide-react';
 import { ROUTES } from './index';
@@ -103,9 +106,24 @@ export const NAVIGATION: NavSection[] = [
     title: '데이터 분석',
     items: [
       {
-        title: 'Excel 통계',
+        title: '판매현황 통계',
         href: ROUTES.analytics,
         icon: FileSpreadsheet,
+      },
+      {
+        title: '종합보고서 통계',
+        href: ROUTES.salesReport,
+        icon: PieChart,
+      },
+      {
+        title: '원가 분석',
+        href: ROUTES.costAnalysis,
+        icon: Calculator,
+      },
+      {
+        title: '체크리스트',
+        href: ROUTES.checklist,
+        icon: ListChecks,
       },
     ],
   },

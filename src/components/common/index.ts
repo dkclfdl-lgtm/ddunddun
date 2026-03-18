@@ -11,3 +11,4 @@ export {
   FormSkeleton,
 } from './loading-skeleton';
 export { SearchInput } from './search-input';
+export { DataAnalysisTabs } from './data-analysis-tabs';

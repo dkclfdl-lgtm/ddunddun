@@ -156,6 +156,7 @@ export default function AnalyticsPage() {
   if (!hasData) {
     return (
       <div className="space-y-6 p-6">
+
         <PageHeader
           title="엑셀 통계 분석"
           description="POS 판매 데이터를 업로드하여 인사이트를 도출합니다"
@@ -180,6 +181,7 @@ export default function AnalyticsPage() {
 
   return (
     <div className="space-y-6 p-6">
+
       <ReportDownloadModal
         open={showReportModal}
         onOpenChange={setShowReportModal}

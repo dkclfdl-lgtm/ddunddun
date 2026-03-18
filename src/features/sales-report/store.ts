@@ -2,35 +2,35 @@
 
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { ExcelProductData } from './types';
+import type { SalesReportData } from './types';
 
-interface AnalyticsStore {
-  uploadedData: ExcelProductData[];
+interface SalesReportStore {
+  reportData: SalesReportData | null;
   fileName: string | null;
   uploadedAt: string | null;
-  setData: (data: ExcelProductData[], fileName: string) => void;
+  setReportData: (data: SalesReportData, fileName: string) => void;
   clearData: () => void;
 }
 
-export const useAnalyticsStore = create<AnalyticsStore>()(
+export const useSalesReportStore = create<SalesReportStore>()(
   persist(
     (set) => ({
-      uploadedData: [],
+      reportData: null,
       fileName: null,
       uploadedAt: null,
-      setData: (data, fileName) =>
+      setReportData: (data, fileName) =>
         set({
-          uploadedData: data,
+          reportData: data,
           fileName,
           uploadedAt: new Date().toISOString(),
         }),
       clearData: () =>
         set({
-          uploadedData: [],
+          reportData: null,
           fileName: null,
           uploadedAt: null,
         }),
     }),
-    { name: 'ddunddun-analytics' }
+    { name: 'ddunddun-sales-report' }
   )
 );
